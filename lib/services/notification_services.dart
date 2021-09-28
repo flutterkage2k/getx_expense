@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print, duplicate_ignore, unnecessary_new
+
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
@@ -29,12 +31,16 @@ class NotifyHelper {
         onSelectNotification: selectNotification);
   }
 
+  // ignore: duplicate_ignore
   displayNotification({required String title, required String body}) async {
+    // ignore: avoid_print
     print("doing test");
+    // ignore: unnecessary_new
     var androidPlatformChannelSpecifics = new AndroidNotificationDetails(
         'your channel id', 'your channel name', 'your channel description',
         importance: Importance.max, priority: Priority.high);
     var iOSPlatformChannelSpecifics = new IOSNotificationDetails();
+    // ignore: unnecessary_new
     var platformChannelSpecifics = new NotificationDetails(
         android: androidPlatformChannelSpecifics,
         iOS: iOSPlatformChannelSpecifics);

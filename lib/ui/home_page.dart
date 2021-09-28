@@ -1,8 +1,11 @@
+// ignore_for_file: unused_field
+
 import 'package:date_picker_timeline/date_picker_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_expense/services/notification_services.dart';
 import 'package:getx_expense/services/theme_serivces.dart';
+import 'package:getx_expense/ui/add_task_bar.dart';
 import 'package:getx_expense/ui/theme.dart';
 import 'package:getx_expense/ui/widgets/button.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,6 +21,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   DateTime _selectedDate = DateTime.now();
 
+  // ignore: prefer_typing_uninitialized_variables
   var notifyHelper;
 
   @override
@@ -43,7 +47,7 @@ class _HomePageState extends State<HomePage> {
 
   _addDateBar() {
     return Container(
-      margin: const EdgeInsets.only(top: 20, left: 20),
+      margin: const EdgeInsets.only(top: 20, left: 10),
       child: DatePicker(
         DateTime.now(),
         height: 100,
@@ -81,7 +85,7 @@ class _HomePageState extends State<HomePage> {
 
   _addTaskBar() {
     return Container(
-      margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
+      margin: const EdgeInsets.only(left: 10, right: 10, top: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -101,7 +105,8 @@ class _HomePageState extends State<HomePage> {
               )
             ],
           ),
-          MyButton(label: "+ Add Task", onTap: () {})
+          MyButton(
+              label: "+ Add Task", onTap: () => Get.to(() => AddTaskPage()))
         ],
       ),
     );
@@ -128,7 +133,7 @@ class _HomePageState extends State<HomePage> {
           color: Get.isDarkMode ? Colors.white : Colors.black,
         ),
       ),
-      actions: [
+      actions: const [
         CircleAvatar(
           backgroundImage: AssetImage("images/profile.png"),
         ),
