@@ -5,8 +5,8 @@ import 'package:getx_expense/ui/theme.dart';
 class MyInputField extends StatelessWidget {
   const MyInputField(
       {Key? key,
-      required this.hint,
       required this.title,
+      required this.hint,
       this.controller,
       this.widget})
       : super(key: key);
